@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-social2">
+
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+
+                padding: 10px;
+            }
+        </style>
+        <p>Test 2</p>
+    </template>
+    <script>
+        class MySocial2 extends Polymer.Element {
+            static get is() {
+                return "my-social2";
+            }
+        }
+
+        window.customElements.define(MySocial2.is, MySocial2);
+    </script>
+</dom-module>

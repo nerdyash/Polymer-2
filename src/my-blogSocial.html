@@ -1,0 +1,50 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-blogsocial">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+
+                padding: 10px;
+            }
+        </style>
+        <style>
+            h1 {
+                text-align: right; 
+                color: green;
+            }
+        </style>
+        <template is="dom-repeat" items={{socials}}>
+            <div class="card">
+                <h1 class="small">[[item.header]]</h1>
+                <h2 class="small">[[item.title]]</h2>
+                <p>[[item.content]]</p>
+                <a href=[[item.link]]>Read more</a>
+            </div>
+        </template>
+    </template>
+    <script>
+        class MyBlogsocial extends Polymer.Element {
+            static get is() { return 'my-blogsocial'; }
+
+            static get properties() {
+                return {
+                    socials: {
+                        type: Array,
+                        value() {
+                            return [
+                                { header: "social", title: "Smile Farms 2nd Annual Spring Benefit", content: "One of Sooryen’s partners, FolioDynamix (FDx),held it’s annual Xchange Conference from Oct. 2nd through the 4th at the Omni Amelia Island Plantation Resort in Amelia Island,Florida this year. As FDx’s innovation partner, Söoryen was a technology sponsor at … ", link:"social1"},
+                                { header: "social", title: "FolioDynamix’s 2017 Innovation Xchange", content: "One of Söoryen’s partners, FolioDynamix (FDx), held it’s annual Xchange Conference from Oct. 2nd through the 4th at the Omni Amelia Island Plantation Resort in Amelia Island, Florida this year. As FDx’s innovation partner, Söoryen was a technology sponsor at … ", link:"social2"},
+                                { header: "social", title: "Shine Hackathon", content: "Söoryen Technologies launched its first Shine Hackathon on Friday, November 11, 2016 to give all its engineers globally, an opportunity to shine and showcase their innovative talents. The Hackathon was judged on two criteria: best hack and best concept. Four … ", link: "social3"}
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+        window.customElements.define(MyBlogsocial.is, MyBlogsocial);
+    </script>
+</dom-module>

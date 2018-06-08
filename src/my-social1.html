@@ -1,0 +1,46 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-social1">
+    
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+
+                padding: 10px;
+            }
+            img {
+                width: 100%;
+            }
+            h1 {
+                color: green;
+                display: inline-block;
+            }
+            header {
+                color: orange;
+            }
+        </style>
+        <div class="card">
+            <div>
+                <h1 class="small">Social</h1>
+                <div class="date">April 30, 2018</div>
+            </div>
+            <header>Smile Farms 2nd Annual Spring Benefit</header>
+            <p>On April 17th, Sooryen Technologies were honored to attend Smile Farms 2nd Annual Spring Benefit to celebrate their 6th campus
+            at River Park Farm in partnership with The Center For Family Support.</p>
+            <p>We are proud partners and committee members, and dedicated to helping this great cause. To learn more about this amazing
+            organization, click on this link<a href="https://www.smilefarms.org/">https://www.smilefarms.org/</a></p>
+            <img src="http://blog.sooryen.com/wp-content/uploads/2018/04/Smile-Farms-1.png">
+            <img src="http://blog.sooryen.com/wp-content/uploads/2018/04/Smile-Farms-2.png">
+        </div>
+    </template>
+    <script>
+        class MySocial1 extends Polymer.Element {
+            static get is() { return "my-social1"; }
+        }
+        
+        window.customElements.define(MySocial1.is, MySocial1);
+    </script>
+</dom-module>
