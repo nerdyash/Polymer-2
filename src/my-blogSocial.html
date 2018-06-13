@@ -1,5 +1,6 @@
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-blogsocial">
@@ -16,11 +17,23 @@
                 text-align: right; 
                 color: green;
             }
+            #searchId  {
+                display: block;
+                width: 200px; 
+                height: 20px; 
+                margin-left: 8%;
+            }
         </style>
+        <paper-input label="Enter search term" on-value-changed="_onSearchTermChanged" value="{{searchTerm}}"></paper-input>
+        <!-- <script>
+            document.querySelector('paper-input').addEventListener('change', function (event) {
+                console.log(event.target.value);
+            });
+        </script> -->
         <template is="dom-repeat" items={{socials}}>
             <div class="card">
                 <h1 class="small">[[item.header]]</h1>
-                <h2 class="small">[[item.title]]</h2>
+                <h2 class="small title">[[item.title]]</h2>
                 <p>[[item.content]]</p>
                 <a href=[[item.link]]>Read more</a>
             </div>
@@ -41,6 +54,21 @@
                                 { header: "social", title: "Shine Hackathon", content: "Söoryen Technologies launched its first Shine Hackathon on Friday, November 11, 2016 to give all its engineers globally, an opportunity to shine and showcase their innovative talents. The Hackathon was judged on two criteria: best hack and best concept. Four … ", link: "social3"}
                             ]
                         }
+                    }
+                }
+            }
+            
+            _onSearchTermChanged (event) { console.log(event.detail.value); 
+                var input, filter, title;
+                input = document.getElementsByTagName("paper-input");
+                filter = event.detail.value;
+                title = this.socials;
+                for(var i = 0; i < title.length; i++) {
+                    if(title[i].title.indexOf(filter) > -1) {
+                        title[i].title;
+                    }
+                    else {
+                        console.log("doesn't match");
                     }
                 }
             }

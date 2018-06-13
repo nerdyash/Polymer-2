@@ -1,0 +1,17 @@
+[
+    {
+        "name": "blogSocial",
+        "title": "Social",
+        "link": "blogSocial"
+    },
+    {
+        "name" : "News",
+        "title" : "news",
+        "link" : "view2"
+    },
+    {
+        "name" : "Knowledge",
+        "title" : "knowledge",
+        "link" : "view3"
+    }
+]
